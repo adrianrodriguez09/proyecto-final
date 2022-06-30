@@ -1,0 +1,21 @@
+let stockProductos = [
+    {id: 1, nombre: "habitacion 1", tipo: "cara", cantidad: 1, desc: "es una habitacion que cumple con todo y mas.....", precio: 1200, img: './img/habi1.jpg'},
+    {id: 2, nombre: "habitacion 2", tipo: "cara", cantidad: 1, desc: "es una habitacion que cumple con todo y mas.....", precio: 1100, img: './img/habi2.jpg'},
+    {id: 3, nombre: "habitacion 3", tipo: "cara", cantidad: 1, desc: "es una habitacion que cumple con todo y mas.....", precio: 1200, img: './img/habi3.jpg'},
+    {id: 4, nombre: "habitacion 4", tipo: "cara", cantidad: 1, desc: "es una habitacion que cumple con todo y mas.....", precio: 1400, img: './img/habi4.jpg'},
+    {id: 5, nombre: "habitacion 5", tipo: "cara", cantidad: 1, desc: "es una habitacion que cumple con todo y mas.....", precio: 1200, img: './img/habi5.jpg'},
+    {id: 6, nombre: "habitacion 6", tipo: "cara", cantidad: 1, desc: "es una habitacion que cumple con todo y mas.....", precio: 1500, img: './img/habi6.jpg'},
+    {id: 7, nombre: "habitacion 1", tipo: "media", cantidad: 1, desc: "una habitacion confort", precio: 5000, img: './img/habi3.jpg'},
+    {id: 8, nombre: "habitacion 2", tipo: "media", cantidad: 1, desc: "una habitacion confort", precio: 4000, img: './img/habi6.jpg'},
+    {id: 9, nombre: "habitacion 3", tipo: "media", cantidad: 1, desc: "una habitacion confort", precio: 3000, img: './img/habi2.jpg'},
+    {id: 10, nombre: "habitacion 4", tipo: "media", cantidad: 1, desc: "una habitacion confort", precio: 700, img: './img/habi6.jpg'},
+    {id: 11, nombre: "habitacion 5", tipo: "media", cantidad: 1,desc: "una habitacion confort", precio: 700, img: './img/habi7.jpg'},
+    {id: 12, nombre: "habitacion 6", tipo: "media", cantidad: 1, desc: "una habitacion confort", precio: 700, img: './img/habi1.jpg'},
+    {id: 13, nombre: "habitacion 1", tipo: "barata", cantidad: 1, desc: "una habitacion tranqui", precio: 900, img: './img/habi5.jpg'},
+    {id: 14, nombre: "habitacion 2", tipo: "barata", cantidad: 1, desc: "una habitacion tranqui", precio: 400, img: './img/habi2.jpg'},
+    {id: 15, nombre: "habitacion 3", tipo: "barata", cantidad: 1, desc: "una habitacion tranqui", precio: 800, img: './img/habi6.jpg'},
+    {id: 16, nombre: "habitacion 4", tipo: "barata", cantidad: 1, desc: "una habitacion tranqui", precio: 777, img: './img/habi5.jpg'},
+    {id: 17, nombre: "habitacion 5", tipo: "barata", cantidad: 1, desc: "una habitacion tranqui", precio: 234, img: './img/habi3.jpg'},
+    {id: 18, nombre: "habitacion 6", tipo: "barata", cantidad: 1, desc: "una habitacion tranqui", precio: 600, img: './img/habi2.jpg'},
+    
+]
