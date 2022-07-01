@@ -246,5 +246,53 @@ p {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
 
-
+/* galeriaaa
+//////////////////
+//////////////////
+/////////////////// */
+.container{
+   display: grid;
+   place-content: center;
+   place-items: center;
+}
+.gallery{
+    width: 95vh;
+    height: 30vmin;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
    
+}
+.gallery img{
+    height: 100%;
+    flex: 1;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+.gallery img:hover{
+    flex: 4;
+}
+/* FOOTER
+/////////////
+/////////////
+/////////////
+////////////// */
+footer{
+    height: 200px;
+    display: grid;
+    place-content: center;
+    place-items:center;
+    background-color: #e7f7e7;
+}
+footer a{
+    text-decoration: none;
+    padding: 5px;
+    display: inline;
+    color:green;
+}
+footer a:hover{
+    color: black;
+}
