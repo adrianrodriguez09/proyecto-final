@@ -16,6 +16,18 @@ const cantidadTotal = document.getElementById('cantidadTotal')
 
 let carrito = []
 
+const comprarButton = document.querySelector('.comprarButton')
+comprarButton.addEventListener('click', ()=>{
+    realizarCompra()
+    Swal.fire({
+        title: 'Finalizada la compra',
+      text: 'Gracias por elegirnos',
+      icon: 'success',
+      })
+}
+)
+
+
 const button = document.getElementById('ir')
 let carritoDeCompras = []
 button.addEventListener("click", ()=> {
@@ -23,10 +35,9 @@ button.addEventListener("click", ()=> {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('carrito')){
-        carrito = JSON.parse(localStorage.getItem('carrito'))
+        carrito = JSON.parse(localStorage.getItem('carrito')) || ['carrito vacio']
         actualizarCarrito()
-    }
+    
 })
 
 botonVaciar.addEventListener('click', () => {
@@ -39,10 +50,10 @@ stockProductos.forEach((producto) => {
     const div = document.createElement('div')
     div.classList.add('producto')
     div.innerHTML = `
-    <img src=${producto.img} alt= "">
-    <h3>${producto.nombre}</h3>
-    <p>${producto.desc}</p>
-    <p>Talle: ${producto.talle}</p>
+    <img src=${producto?.img || "lo sentimos esta img no esta cargada"} alt= "">
+    <h3>${producto?.nombre || "lo sentimos tenemos unos problemas para cargar esta habitacion"}</h3>
+    <p>${producto?.desc || "lo sentimos estamos teniendo problemas"}</p>
+    <p>Talle: ${producto?.tipo || "lo sentimos estamos teniendo problemas para cargar la info"}</p>
     <p class="precioProducto">Precio:$ ${producto.precio}</p>
     <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
 
@@ -113,4 +124,9 @@ const actualizarCarrito = () => {
     
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
     
+}
+
+function realizarCompra(){
+    contenedorCarrito.innerHTML = "";
+    precioTotal.innerHTML = "0";
 }

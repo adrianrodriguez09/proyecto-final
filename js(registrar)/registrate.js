@@ -9,13 +9,16 @@ const focoEnCampus = ()=> {
 }
 focoEnCampus()
 
-btnsubmit.addEventListener("click", (e)=>{
-    e.preventDefault()
+btnsubmit.addEventListener('click', ()=>{
+    
      guardarDatosDeUsr()
-  
+     Swal.fire({
+        title: 'TUS DATOS SE CARGARON CORRECTAMENTE!',
+      text: 'Gracias!!',
+      icon: 'info',
+      
+      })
 })
-
-
 
 function guardarDatosDeUsr (){
 const datosUsr = {
@@ -26,7 +29,6 @@ const datosUsr = {
 let str = JSON.stringify(datosUsr)
 localStorage.setItem("datosDeUsr", str)
 
-    
 }
 
 function recuperoDatosDeUsr (){

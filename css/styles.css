@@ -198,7 +198,14 @@ p {
     display: flex;
     justify-content: space-between;
 }
-
+.boton-comprar{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #17acda;
+    padding: 10px 5px;
+    display: flex;
+    
+}
 
 .boton-eliminar {
     background-color: white;
@@ -213,6 +220,14 @@ p {
 .boton-eliminar:focus {
     outline: none;
 }
+/* Estilo registro 
+/////////////////
+/////////////////
+/////////////////*/
+.img-registro{
+    height: 40vh;
+    width: 100%;
+}
 .fondo-red{
     background-color: rgb(48, 106, 180);
     color: white;
@@ -226,6 +241,7 @@ p {
   h2{
     color: rgb(72, 158, 151);
     text-align: center;
+    font-size: 22px;
   }
   h5{
     text-align: center;
@@ -237,8 +253,10 @@ p {
     color: red;
   }
   .titulo-registro{
-    color: rgb(209, 177, 70);
+    color: rgb(12, 219, 219);
     text-align: center;
+    font-size: 18px;
+    font-weight: 600;
   }
   .parrafo-registro{
     text-align: center;
