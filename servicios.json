@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "nombre": "montar a caballo",
+    
+    "desc": "es una habitacion que cumple con todo y mas.....",
+    "precio": 1200,
+    "img": "./imgServicios/caballo.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Paseo turistico",
+    
+    "desc": "En esta actividad conoceras toda la ciudad",
+    "precio": 1100,
+    "img": "./imgServicios/images.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Un dia de Spa",
+   
+    "desc": "Este servicio tu cuerpo lo necesita, haceme caso 😉",
+    "precio": 1200,
+    "img": "./imgServicios/spa.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "caminata por el cerro",
+   
+    "desc": "te gusta la aventura? esta actividad es para vos🤠",
+    "precio": 1400,
+    "img": "./imgServicios/cerro.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Paseo en lancha",
+  
+    "desc": "Conoce nuestro hermoso dique",
+    "precio": 1200,
+    "img": "./imgServicios/lancha.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Juegos variados",
+    
+    "desc": "Esta actividad es para los mas pequeños",
+    "precio": 1500,
+    "img": "./imgServicios/juegos.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Noche de casino",
+    
+    "desc": "veni y aposta todos tus ahorros",
+    "precio": 5000,
+    "img": "./imgServicios/casino.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Discoteca",
+  
+    "desc": "Una noche inolvidable",
+    "precio": 4000,
+    "img": "./imgServicios/baile.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Loteria",
+   
+    "desc": "ey, a quien no le gusta jugar a la loteria ",
+    "precio": 3000,
+    "img": "./imgServicios/loteria.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Visita al ZOO",
+  
+    "desc": "Este sera una acitvidad para conocer hermosos animales",
+    "precio": 700,
+    "img": "./imgServicios/zoo.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Cine",
+  
+    "desc": "contamos con un cine en nuestro hotel 😎",
+    "precio": 700,
+    "img": "./imgServicios/cine.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "alquiler de bicicletas",
+   
+    "desc": "recorre la ciudad en bici",
+    "precio": 700,
+    "img": "./imgServicios/bicicletas.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "alquiler de automovil",
+    
+    "desc": "si nop queres pedalear, contamos con autos a tu dispocision",
+    "precio": 900,
+    "img": "./imgServicios/autos.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Sala de juegos gamer",
+  
+    "desc": "por si queres jugar unas partidas para relajar",
+    "precio": 400,
+    "img": "./imgServicios/gamer.jpg"
+  }
+]

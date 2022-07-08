@@ -1,7 +1,9 @@
 
+
+
 const contenedorProductos = document.getElementById('contenedor-productos')
 
-
+const servicios = document.getElementById('servicios')
 
 const contenedorCarrito = document.getElementById('carrito-contenedor')
 
@@ -15,6 +17,8 @@ const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
 let carrito = []
+
+
 
 const comprarButton = document.querySelector('.comprarButton')
 comprarButton.addEventListener('click', ()=>{
@@ -45,15 +49,14 @@ botonVaciar.addEventListener('click', () => {
     actualizarCarrito()
 })
 
-
-stockProductos.forEach((producto) => {
+const hola = stockProductos.forEach((producto) => {
     const div = document.createElement('div')
     div.classList.add('producto')
     div.innerHTML = `
     <img src=${producto?.img || "lo sentimos esta img no esta cargada"} alt= "">
     <h3>${producto?.nombre || "lo sentimos tenemos unos problemas para cargar esta habitacion"}</h3>
     <p>${producto?.desc || "lo sentimos estamos teniendo problemas"}</p>
-    <p>Talle: ${producto?.tipo || "lo sentimos estamos teniendo problemas para cargar la info"}</p>
+    <p>Tipo: ${producto?.tipo || "lo sentimos estamos teniendo problemas para cargar la info"}</p>
     <p class="precioProducto">Precio:$ ${producto.precio}</p>
     <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
 
@@ -95,7 +98,7 @@ const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
 
     const indice = carrito.indexOf(item) 
-    carrito.splice(indice, 1) 
+    carrito.splice(indice, 0) 
     
     actualizarCarrito() 
     
@@ -111,7 +114,7 @@ const actualizarCarrito = () => {
         <p>${prod.nombre}</p>
         <p>Precio:$${prod.precio}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-        <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+        <button onclick="eliminarDelCarrito(${prod.id})"class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
         `
 
         contenedorCarrito.appendChild(div)
@@ -130,3 +133,45 @@ function realizarCompra(){
     contenedorCarrito.innerHTML = "";
     precioTotal.innerHTML = "0";
 }
+
+// fetch
+// =========
+// =========
+// DE LAS 2 FORMAS ANDA
+// fetch("/servicios.json")
+// .then((res) => res.json())
+// .then((data) => {
+//     data.forEach((servicio) => {
+//         const div = document.createElement("div")
+//         div.classList.add('producto')
+//         div.innerHTML = `
+//         <img src=${servicio.img} alt= "">
+//         <h4>${servicio.nombre}</h4>
+//         <p>desc: ${servicio.desc}</p>
+//         <p>precio: ${servicio.precio}</p>
+       
+        
+//         `
+//         servicios.append(div)
+//     })
+// })
+             
+const pedirDatos = async () => {
+    const respuesta = await fetch ("servicios.json")
+    const data = await respuesta.json();
+    data.forEach((servicio) => {
+                const div = document.createElement("div")
+                div.classList.add('producto')
+                div.innerHTML = `
+                <img src=${servicio.img} alt= "">
+                <h4>${servicio.nombre}</h4>
+                <p>desc: ${servicio.desc}</p>
+                <p>precio: ${servicio.precio}</p>
+               
+                
+                `
+                servicios.append(div)
+            })
+        }
+
+pedirDatos()
