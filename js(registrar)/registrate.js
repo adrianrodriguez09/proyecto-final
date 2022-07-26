@@ -1,15 +1,6 @@
-const focoEnCampus = ()=> {
-    const campos = document.querySelectorAll("input")
-    for( let campo of campos){
-        if( campo.type != "submit"){
-            campo.addEventListener("focus", ()=> campo.className = "fondo-red")
-            campo.addEventListener("blur", ()=> campo.className = "")
-        }
-    }
-}
-focoEnCampus()
 
-btnsubmit.addEventListener('click', ()=>{
+
+btnsubmit.addEventListener('click',  ()=>{
     
      guardarDatosDeUsr()
      Swal.fire({
@@ -18,12 +9,18 @@ btnsubmit.addEventListener('click', ()=>{
       icon: 'info',
       
       })
+     
+      form.reset()
+      btnVolver.addEventListener("click", ()=> {
+        location.href = "index.html"
+    })
 })
+
 
 function guardarDatosDeUsr (){
 const datosUsr = {
     nombre:inputNombre.value,
-    telefono:inputNombre.value,
+    contraseña:inputContraseña.value,
     email:inputEmail.value
 }
 let str = JSON.stringify(datosUsr)
@@ -36,10 +33,21 @@ function recuperoDatosDeUsr (){
     if(localStorage.getItem("datosDeUsr")){
       const datosDeUsr = JSON.parse(localStorage.getItem("datosDeUsr"))
         inputNombre.value = datosDeUsr.nombre
-        inputTelefono.value = datosDeUsr.telefono
+        inputContraseña.value = datosDeUsr.telefono
         inputEmail.value = datosDeUsr.email
      }
     
 }
 
 recuperoDatosDeUsr()
+const $btnSingIn = document.querySelector('.sign-in-btn'),
+      $btnSingUp = document.querySelector('.sign-up-btn'),
+      $signUp = document.querySelector('.sign-up'),
+      $signIn = document.querySelector('.sign-in')
+
+document.addEventListener('click', e =>{
+    if(e.target === $btnSingIn || e.target === $btnSingUp){
+        $signIn.classList.toggle('active');
+        $signUp.classList.toggle('active')
+    }
+})      
