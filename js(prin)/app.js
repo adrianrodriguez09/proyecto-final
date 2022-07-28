@@ -1,5 +1,5 @@
 
-
+// aqui declare las variables
 
 const contenedorProductos = document.getElementById('contenedor-productos')
 
@@ -11,7 +11,9 @@ const botonVaciar = document.getElementById('vaciar-carrito')
 
 const contadorCarrito = document.getElementById('contadorCarrito')
 
-const URL = 'stockHabitaciones.json';
+const comprarButton = document.querySelector('.comprarButton')
+
+const btnFinalizar = document.getElementById('submit')
 
 const button = document.getElementById('ir')
 
@@ -23,25 +25,6 @@ let carrito = []
 
 
 
-const comprarButton = document.querySelector('.comprarButton')
-comprarButton.addEventListener('click', ()=>{
-    realizarCompra()
-    Swal.fire({
-        title: 'Finalizada la compra',
-      text: 'Gracias por elegirnos',
-      icon: 'success',
-      })
-}
-)
-
-
-
-let carritoDeCompras = []
-
-
-button.addEventListener("click", ()=> {
-  location.href = "registrate.html"
-})
 
 document.addEventListener('DOMContentLoaded', () => {
         carrito = JSON.parse(localStorage.getItem('carrito')) || ['carrito vacio']
@@ -51,13 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 botonVaciar.addEventListener('click', () => {
     carrito.length = 0
+    removerJson()
     actualizarCarrito()
 })
 
-fetch('stockHabitaciones.json')
+ fetch('stockHabitaciones.json') //muestro en pantalla las habitaciones
 .then (response => response.json())
 .then (habitaciones => {
     mostrarContenido(habitaciones)
+    
  })
 
  function mostrarContenido(habitaciones){
@@ -89,8 +74,8 @@ habitaciones.forEach(contenido=>{
 })
 
  }
-
-const agregarAlCarrito = (prodId) => {
+// funcion de agregarAlCarrito
+const agregarAlCarrito = (prodId) => {   
 
     
     const existe = carrito.some (prod => prod.id === prodId) 
@@ -109,12 +94,14 @@ const agregarAlCarrito = (prodId) => {
     actualizarCarrito() 
 }
 
+
+// funcion de eliminar el producto
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
 
     const indice = carrito.indexOf(item) 
     carrito.splice(indice, 1) 
-    
+    removerJson()
     actualizarCarrito() 
     
 }
@@ -123,13 +110,14 @@ const actualizarCarrito = () => {
    
     contenedorCarrito.innerHTML = "" 
     carrito.forEach((prod) => {
+        const {nombre, precio, cantidad, id} = prod
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
         div.innerHTML = `
-        <p>${prod.nombre}</p>
-        <p>Precio:$${prod.precio}</p>
-        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-        <button onclick="eliminarDelCarrito(${prod.id})"class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+        <p>${nombre}</p>
+        <p>Precio:$${precio}</p>
+        <p>Cantidad: <span id="cantidad">${cantidad}</span></p>
+        <button onclick="eliminarDelCarrito(${id})"class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
         `
 
         contenedorCarrito.appendChild(div)
@@ -144,9 +132,23 @@ const actualizarCarrito = () => {
     
 }
 
+comprarButton.addEventListener('click', ()=>{
+   if(carrito.length > 1){  
+   location.href = "registrate.html"}else{
+    Swal.fire({
+        icon: 'error',
+        title: 'ups!',
+        text: 'por favor agrega productos al carrito para poder realizar esta accion',
+    })}
+})
+
 function realizarCompra(){
     contenedorCarrito.innerHTML = "";
     precioTotal.innerHTML = "0";
+}
+
+function removerJson() {
+    localStorage.removeItem("carrito")
 }
 
 
