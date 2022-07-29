@@ -42,14 +42,15 @@ btnsubmit.addEventListener("click", (e)=>{
       }) : (guardarDatosDeUsr(), Swal.fire({
         icon: 'success',
         title: 'Genial!',
-        text: 'Tus datos fueron enviados',
-        text: 'Gracias por elegirnos'
+        text: 'Tus datos fueron enviados exitosamente',
+        text: 'Gracias por elegirnos',
+        text: 'te llegara un email con toda la info correspondiente'
       }),storageRemove(),setTimeout(()=>{
         window.scroll(top)
       }, 900)
        ,setTimeout(()=>{
           location.reload()
-      }, 900))
+      }, 1500))
       
   
       form.reset()

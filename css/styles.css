@@ -267,7 +267,7 @@ p {
 .mensaje h2{
     font-size: 1.7rem;
     padding: 1rem 0,;
-    color: rgb(62, 175, 17);
+    color: rgb(1, 114, 105);
 }
 .mensaje button{
     padding: 10px;
@@ -283,7 +283,7 @@ p {
     background-color: white;
 }
 .formulario{
-  width: 400px;
+  width: 500px;
   padding: 1rem;
   margin: 2rem;
   background-color: rgb(51, 51, 51);
@@ -345,18 +345,17 @@ p {
     color: black;
     font-weight: 900}
 
-.sign-in{
-position: absolute;
-opacity: 0;
-visibility: hidden;
+#miCarrito{
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: auto;
+    height: 50vh;
 }
-.sign-in.active{
-    opacity: 1;
-    visibility: visible;
-}
-.sign-up.active{
-opacity: 0;
-visibility: hidden;
+#totalCompra{
+    background-color: aliceblue;
+    width: auto;
+    color:black;
+    height: 50vh;
 }
 /* galeriaaa
 //////////////////

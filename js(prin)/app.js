@@ -25,13 +25,6 @@ let carrito = []
 
 
 
-
-document.addEventListener('DOMContentLoaded', () => {
-        carrito = JSON.parse(localStorage.getItem('carrito')) || ['carrito vacio']
-        actualizarCarrito()
-    
-})
-
 botonVaciar.addEventListener('click', () => {
     carrito.length = 0
     removerJson()
@@ -42,9 +35,10 @@ botonVaciar.addEventListener('click', () => {
 .then (response => response.json())
 .then (habitaciones => {
     mostrarContenido(habitaciones)
-    
  })
+ .catch(err=> console.log(err))
 
+ 
  function mostrarContenido(habitaciones){
  
 habitaciones.forEach(contenido=>{
@@ -90,7 +84,7 @@ const agregarAlCarrito = (prodId) => {
         const item = stockProductos.find((prod) => prod.id === prodId)
         carrito.push(item)
     }
-    
+    jsonCarrito()
     actualizarCarrito() 
 }
 
@@ -122,7 +116,7 @@ const actualizarCarrito = () => {
 
         contenedorCarrito.appendChild(div)
         
-        localStorage.setItem('carrito', JSON.stringify(carrito))
+       jsonCarrito()
 
     })
     
@@ -133,7 +127,7 @@ const actualizarCarrito = () => {
 }
 
 comprarButton.addEventListener('click', ()=>{
-   if(carrito.length > 1){  
+   if(carrito.length > 0){  
    location.href = "registrate.html"}else{
     Swal.fire({
         icon: 'error',
@@ -151,6 +145,29 @@ function removerJson() {
     localStorage.removeItem("carrito")
 }
 
+function jsonCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+// funcion para recuperar carrito
 
+class habitacioness {
+    constructor (nombre,precio,cantidad,) {
+        this.nombre = nombre
+        this.precio = precio
+        this.cantidad = cantidad
+    }
+}
+function recuperoJson() {
+    if (localStorage.length > 0){
+
+        carritoJson = JSON.parse(localStorage.getItem("carrito"))
+        carritoJson.forEach(producto => {
+            carrito.push(new habitacioness(producto.nombre, producto.precio, producto.cantidad, ))
+            actualizarCarrito()
+        });
+    }
+      
+}
+recuperoJson()
              
 
